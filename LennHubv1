@@ -1,0 +1,145 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+print ("LennHubv1 loaded <3 RightShift to open GUI.")
+local ScreenGui = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local TitleFrame = Instance.new("Frame")
+local TitleV1 = Instance.new("TextLabel")
+local TitleUnderline = Instance.new("Frame")
+local MurderMystery2 = Instance.new("TextButton")
+local LumberTycoon2 = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = ScreenGui
+MainFrame.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+MainFrame.BorderColor3 = Color3.fromRGB(151, 60, 255)
+MainFrame.Position = UDim2.new(0, 55, 0, 275)
+MainFrame.Size = UDim2.new(0, 195, 0, 265)
+MainFrame.Visible = false
+MainFrame.Active = true
+MainFrame.Draggable = true
+
+TitleFrame.Name = "TitleFrame"
+TitleFrame.Parent = MainFrame
+TitleFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TitleFrame.BackgroundTransparency = 0.900
+TitleFrame.Size = UDim2.new(0, 195, 0, 39)
+
+TitleV1.Name = "TitleV1"
+TitleV1.Parent = TitleFrame
+TitleV1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TitleV1.BackgroundTransparency = 1.000
+TitleV1.Size = UDim2.new(0, 200, 0, 39)
+TitleV1.Font = Enum.Font.SciFi
+TitleV1.Text = "Lenn's Hub [v1.0]"
+TitleV1.TextColor3 = Color3.fromRGB(73, 14, 115)
+TitleV1.TextSize = 23.000
+TitleV1.TextStrokeColor3 = Color3.fromRGB(151, 60, 255)
+TitleV1.TextStrokeTransparency = 0.400
+TitleV1.TextWrapped = true
+
+TitleUnderline.Name = "TitleUnderline"
+TitleUnderline.Parent = TitleFrame
+TitleUnderline.BackgroundColor3 = Color3.fromRGB(151, 60, 255)
+TitleUnderline.BorderColor3 = Color3.fromRGB(27, 42, 53)
+TitleUnderline.Position = UDim2.new(0.0307692308, 0, 1, 0)
+TitleUnderline.Size = UDim2.new(0, 183, 0, 1)
+
+MurderMystery2.Name = "<Murder Mystery 2>"
+MurderMystery2.Parent = MainFrame
+MurderMystery2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MurderMystery2.BackgroundTransparency = 1.000
+MurderMystery2.Position = UDim2.new(0, 0, 0.326037705, 0)
+MurderMystery2.Size = UDim2.new(0, 195, 0, 30)
+MurderMystery2.Font = Enum.Font.SciFi
+MurderMystery2.Text = "<Murder Mystery 2>"
+MurderMystery2.TextColor3 = Color3.fromRGB(151, 60, 255)
+MurderMystery2.TextSize = 14.000
+
+LumberTycoon2.Name = "<Lumber Tycoon 2>"
+LumberTycoon2.Parent = MainFrame
+LumberTycoon2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LumberTycoon2.BackgroundTransparency = 1.000
+LumberTycoon2.Position = UDim2.new(0, 0, 0.212830186, 0)
+LumberTycoon2.Size = UDim2.new(0, 195, 0, 30)
+LumberTycoon2.Font = Enum.Font.SciFi
+LumberTycoon2.Text = "<Lumber Tycoon 2>"
+LumberTycoon2.TextColor3 = Color3.fromRGB(151, 60, 255)
+LumberTycoon2.TextSize = 14.000
+LumberTycoon2.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/nD9i2SfG",true))()
+end)
+
+-- Scripts:
+
+local function TMZQ_fake_script() --Keybind Script 
+	local script = Instance.new('LocalScript', MainFrame)
+
+	--@IIIIIIILennIIIIIIII
+	local frame = script.Parent.Parent.MainFrame
+	local btnpress = Enum.KeyCode.RightShift 
+	
+	local UIS = game:GetService("UserInputService")
+	local open = false
+	
+	
+	
+	UIS.InputBegan:Connect(function(key, gp)
+	 if key.KeyCode == btnpress then
+	  if UIS:GetFocusedTextBox() == nil then
+	   if open == false then
+	    open = true 
+	    frame.Visible = open
+	   elseif open == true then
+	    open = false
+	    frame.Visible = open
+	   end
+	  end
+	 end
+	end)
+	
+	
+	
+	
+	
+	                      -------------
+	                -------------------------
+	        -----------------------------------------
+	-----------------------------------------------------------
+	---Drag this script into the frame you want to toggle :)---
+	-----------------------------------------------------------
+	        -----------------------------------------
+	                -------------------------
+	                      -------------
+end
+coroutine.wrap(TMZQ_fake_script)()
+local function QBLLNAT_fake_script() -- ScreenGui.Noti 
+	local script = Instance.new('LocalScript', ScreenGui)
+
+	local function callback(Text)
+		if Text == "LennHub" then
+			print ("LennHubv1 has loaded <3")
+		elseif Text == ("Button2 text") then
+			print ("frfr")
+		end
+	end
+	
+	local NotificationBindable = Instance.new("BindableFunction")
+	NotificationBindable.OnInvoke = callback
+	--
+	game.StarterGui:SetCore("SendNotification",  {
+		Title = "LennHubV1";
+		Text = "has loaded. Press RightShift <3";
+		Icon = "https://www.roblox.com/library/4485364382/Green-Check-Mark-Round";
+		Duration = 7.5;
+		Callback = NotificationBindable;
+	})
+end
+coroutine.wrap(QBLLNAT_fake_script)()
